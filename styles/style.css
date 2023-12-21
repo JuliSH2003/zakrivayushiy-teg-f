@@ -53,6 +53,12 @@
   margin-top: 102px;
 }
 
+@media (width <= 375px) {
+  .header__theme-menu {
+    min-height: 323px;
+  }
+}
+
 /* заголовок  */
 .header__title {
   font-size: 65px;
@@ -63,6 +69,12 @@
   font-family: "PressStart2P";
 }
 
+@media (width <= 375px) {
+  .header__title {
+    font-size: 49px;
+  }
+}
+
 /* подзаголовок */
 .header__subtitle {
   font-size: 23px;
@@ -71,6 +83,12 @@
   text-transform: uppercase;
   margin-bottom: 15px;
   font-family: "PressStart2P";
+}
+
+@media (width <= 375px) {
+  .header__subtitle {
+    font-size: 14px;
+  }
 }
 
 /* кнопки */
@@ -142,8 +160,14 @@
 .main-section {
   display: grid;
   justify-items: center;
-  gap: 45px;
+  gap: 48px;
   padding-block-end: 105px;
+}
+
+@media (width <= 375px) {
+  .main-section {
+    gap: 48px;
+  }
 }
 
 /* карточки */
@@ -165,12 +189,18 @@
   align-items: center;
 }
 
+@media (width <= 375px) {
+  .card__title {
+    padding-inline-start: 0px;
+    padding: 3px 10px;
+  }
+}
+
 /* изображение */
 .card__image-wrapper {
   border-bottom: 2px solid var(--Themes-mainColor);
   z-index: 1;
   position: relative;
-
 }
 
 .card__image-text {
@@ -183,6 +213,13 @@
   position: absolute;
   top: 25px;
   right: 25px;
+}
+
+@media (width <= 375px) {
+  .card__image-text {
+    top: 25px;
+    right: 10px;
+  }
 }
 
 .card__image-overlay {
@@ -216,7 +253,15 @@
 
 .card__text {
   margin: 0 25px;
-  padding-bottom: 25px;
+  padding-bottom: 27px;
+  line-height: 21px;
+}
+
+@media (width <= 375px) {
+  .card__text {
+    margin: 0 25px;
+    padding-bottom: 27px;
+  }
 }
 
 /* лайк */
@@ -245,7 +290,6 @@
   justify-content: center;
   align-items: center;
 }
-
 
 /* фильтры  */
 
@@ -282,7 +326,15 @@
 .button-save {
   border: 2px solid var(--Themes-mainColor);
   background-color: var(--Themes-background);
-  padding: 16px 20px;
+  padding: 15px 20px;
+}
+
+@media (width <= 375px) {
+  .button-save {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .button-save__text {
@@ -298,6 +350,15 @@
   height: 21px;
   fill: var(--Themes-mainColor);
   margin-right: 5px;
+}
+
+@media (width <= 375px) {
+  .button__icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 }
 
 .modal__section {
