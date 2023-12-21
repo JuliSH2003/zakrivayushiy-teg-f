@@ -19,7 +19,6 @@
   min-block-size: 100dvb;
   color: var(--text-color);
   font-family: var(--text-font, "Inter-Flex-Variable", sans-serif);
-  background-color: var(--Themes-background);
   background-image: var(--page-background-image);
   background-position: center;
   background-size: cover;
@@ -276,4 +275,82 @@
 
 .filter-rotate {
   filter: grayscale(30%) saturate(250%) blur(5px) hue-rotate(90deg) invert(25%);
+}
+
+/* сохранить на память */
+
+.button-save {
+  border: 2px solid var(--Themes-mainColor);
+  background-color: var(--Themes-background);
+  padding: 16px 20px;
+}
+
+.button-save__text {
+  color: var(--Themes-mainColor);
+  font-family: "PressStart2P";
+  font-size: 14px;
+  font-style: normal;
+  line-height: 90%; /* 12.6px */
+}
+
+.button__icon {
+  width: 21px;
+  height: 21px;
+  fill: var(--Themes-mainColor);
+  margin-right: 5px;
+}
+
+.modal__section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.modal__icon {
+  fill: var(--Themes-mainColor);
+  margin-right: 20px;
+}
+
+.modal__section svg {
+  width: 60px;
+  height: 60px;
+}
+
+.modal__text {
+  color: var(--Themes-mainColor);
+  font-family: "PressStart2P";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  text-transform: uppercase;
+  max-width: 234px;
+}
+
+.modal {
+  background-color: var(--Themes-background);
+  border: 2px solid var(--Themes-mainColor);
+  max-width: 357px;
+  padding: 31px;
+}
+
+.modal::backdrop {
+  background-color: #000000;
+  opacity: 0.75;
+}
+
+.modal__button {
+  border: 2px solid var(--Themes-mainColor);
+  background-color: var(--Themes-background);
+  padding: 10px 132px;
+}
+
+.button-modal__text {
+  color: var(--Themes-mainColor);
+  font-family: "PressStart2P";
+  font-size: 14px;
+  font-style: normal;
+  line-height: 90%;
+  text-transform: uppercase;
 }
