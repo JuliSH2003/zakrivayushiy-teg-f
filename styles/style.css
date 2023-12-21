@@ -17,4 +17,266 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  color: var(--text-color);
+  font-family: var(--text-font, "Inter-Flex-Variable", sans-serif);
+  background-color: var(--Themes-background);
+  background-image: var(--page-background-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-size: var(--text-size);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* хэдер */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 100px;
+}
+
+.header__theme-menu {
+  max-width: 700px;
+  width: 100%;
+  min-height: 368px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--Themes-mainColor, #000);
+  background: var(--Themes-background, #FFF);
+  margin-top: 102px;
+}
+
+/* заголовок  */
+.header__title {
+  font-size: 65px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-family: "PressStart2P";
+}
+
+/* подзаголовок */
+.header__subtitle {
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-family: "PressStart2P";
+}
+
+/* кнопки */
+.theme-menu__item {
+  margin-bottom: 10px;
+  font-family: "PressStart2P";
+}
+
+.theme-menu__item:last-child {
+  margin-bottom: 25px;
+}
+
+.theme-menu__button {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  outline: none;
+  font-size: 14px;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  padding-left: 25px;
+}
+
+.theme-menu__button::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px; 
+  background: currentColor;
+  transition: width 0.3s ease-out;
+  position: absolute;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+}
+
+.theme-menu__button:hover::after {
+  width: 100%;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.theme-menu__button:disabled::before {
+  content: '▶';
+  z-index: 2;
+  color: var(--Themes-mainColor);
+  font-family: "PressStart2P";
+  position: absolute;
+  left: 0px; 
+  transform: translateY(-50%); 
+  animation-name: play;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  outline: none;
+}
+
+/* главная секция */
+.main-section {
+  display: grid;
+  justify-items: center;
+  gap: 45px;
+  padding-block-end: 105px;
+}
+
+/* карточки */
+.card {
+  max-inline-size: 700px;
+  background-color: var(--Themes-background);
+  border: 2px solid var(--Themes-mainColor);
+}
+
+/* заголовок */
+.card__title {
+  font-weight: 785;
+  font-size: var(--text-size);
+  font-style: normal;
+  padding-inline-start: 10px;
+  border-bottom: 2px solid var(--Themes-mainColor);
+  min-height: 31px;
+  display: flex;
+  align-items: center;
+}
+
+/* изображение */
+.card__image-wrapper {
+  border-bottom: 2px solid var(--Themes-mainColor);
+  z-index: 1;
+  position: relative;
+
+}
+
+.card__image-text {
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  font-family: "PressStart2P";
+  font-size: 14px;
+  text-transform: uppercase;
+  z-index: 1;
+  position: absolute;
+  top: 25px; 
+  right: 25px; 
+}
+
+.card__image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--Themes-background); 
+  mix-blend-mode: hard-light;
+}
+
+.card__image {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+@supports (-webkit-text-stroke: 1px var(--border-label)) or (text-stroke: 1px var(--border-label)) {
+  .card__image-text {
+    text-shadow: none; 
+    -webkit-text-stroke: 0.5px var(--border-label); 
+    text-stroke: 0.5px var(--border-label); 
+  }
+}
+
+/* описание каточки */
+.card__footer {
+  padding-top: 25px;
+}
+
+.card__text {
+  margin: 0 25px;
+  padding-bottom: 25px;
+}
+
+/* лайк */
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 25px;
+  margin-right: 25px;
+}
+
+.button__heart {
+  margin-right: 10px;
+}
+
+.like {
+  color: var(--Themes-mainColor, #000);
+  font-family: "PressStart2P";
+  font-size: 14px;
+  padding: 0 28px;
+}
+
+.button__like {
+  border: 2px solid var(--Themes-mainColor, #00CC14);
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* фильтры  */
+
+/* filter */
+
+.filter-grayscale {
+  filter: grayscale(60%);
+}
+
+.filter-saturate {
+  filter: saturate(170%);
+}
+
+.filter-multi {
+  filter: hue-rotate(40deg) contrast(70%) saturate(110%);
+}
+
+.filter-invert {
+  filter: invert(75%);
+}
+
+.filter-sepia {
+  filter: sepia(85%);
+}
+
+.filter-blur {
+  filter: blur(30px);
+}
+
+.filter-rotate {
+  filter: grayscale(30%) saturate(250%) blur(5px) hue-rotate(90deg) invert(25%);
 }

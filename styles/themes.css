@@ -4,3 +4,50 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+.theme-dark {
+    --text-color: #00CC14;
+    --Themes-background: #000;
+    --Themes-mainColor: #00CC14;
+    --border-label: #000;
+    --heart-contour: #00CC14;
+    --heart-fill: #FF0000;
+    --background-color: linear-gradient(180deg, #007F0C 0%, #004306 100%);
+    --page-background-image: url(../images/background-black.png);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #00CC14;
+        --Themes-mainColor: #00CC14;
+        --border-label: #000;
+        --heart-contour: #00CC14;
+        --heart-fill: #FF0000;
+        --Themes-background: #000;
+        --background-color: linear-gradient(180deg, #007F0C 0%, #004306 100%);
+        --page-background-image: url(../images/background-black.png);
+    }
+}
+
+.theme-light {
+    --text-color: #000;
+    --Themes-background: #fff;
+    --Themes-mainColor: #000;
+    --border-label: #fff;
+    --heart-contour: #000;
+    --heart-fill: #FF0000;
+    --background-color: linear-gradient(180deg, #E7E7E7 0%, #1A1A1A 100%);
+    --page-background-image: url(../images/background-light.png);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --text-color: #000;
+        --Themes-mainColor: #000;
+        --Themes-background: #fff;
+        --heart-contour: #000;
+        --border-label: #fff;
+        --heart-fill: #FF0000;
+        --background-color: linear-gradient(180deg, #E7E7E7 0%, #1A1A1A 100%);
+        --page-background-image: url(../images/background-light.png);
+    }
+}
