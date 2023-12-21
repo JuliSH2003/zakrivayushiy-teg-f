@@ -25,6 +25,7 @@
   background-size: cover;
   background-attachment: fixed;
   font-size: var(--text-size);
+  font-variation-settings: 'wght' 400;
 }
 
 .container {
@@ -57,7 +58,6 @@
 .header__title {
   font-size: 65px;
   font-style: normal;
-  font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -68,7 +68,6 @@
 .header__subtitle {
   font-size: 23px;
   font-style: normal;
-  font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
   margin-bottom: 15px;
@@ -101,7 +100,7 @@
   content: '';
   display: block;
   width: 0;
-  height: 2px; 
+  height: 2px;
   background: currentColor;
   transition: width 0.3s ease-out;
   position: absolute;
@@ -130,8 +129,8 @@
   color: var(--Themes-mainColor);
   font-family: "PressStart2P";
   position: absolute;
-  left: 0px; 
-  transform: translateY(-50%); 
+  left: 0px;
+  transform: translateY(-50%);
   animation-name: play;
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
@@ -157,7 +156,7 @@
 
 /* заголовок */
 .card__title {
-  font-weight: 785;
+  font-variation-settings: 'wght' 700;
   font-size: var(--text-size);
   font-style: normal;
   padding-inline-start: 10px;
@@ -183,8 +182,8 @@
   text-transform: uppercase;
   z-index: 1;
   position: absolute;
-  top: 25px; 
-  right: 25px; 
+  top: 25px;
+  right: 25px;
 }
 
 .card__image-overlay {
@@ -192,7 +191,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--Themes-background); 
+  background-color: var(--Themes-background);
   mix-blend-mode: hard-light;
 }
 
@@ -205,9 +204,9 @@
 
 @supports (-webkit-text-stroke: 1px var(--border-label)) or (text-stroke: 1px var(--border-label)) {
   .card__image-text {
-    text-shadow: none; 
-    -webkit-text-stroke: 0.5px var(--border-label); 
-    text-stroke: 0.5px var(--border-label); 
+    text-shadow: none;
+    -webkit-text-stroke: 0.5px var(--border-label);
+    text-stroke: 0.5px var(--border-label);
   }
 }
 
@@ -250,8 +249,6 @@
 
 
 /* фильтры  */
-
-/* filter */
 
 .filter-grayscale {
   filter: grayscale(60%);
