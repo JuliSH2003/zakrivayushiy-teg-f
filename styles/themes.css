@@ -11,6 +11,7 @@
     --border-label: #000;
     --heart-contour: #00CC14;
     --heart-fill: #FF0000;
+    --btn-color-dark: #00CC14;
     --background-color: linear-gradient(180deg, #007F0C 0%, #004306 100%);
     --page-background-image: url(../images/background-black.png);
 }
@@ -21,6 +22,7 @@
         --Themes-mainColor: #00CC14;
         --border-label: #000;
         --heart-contour: #00CC14;
+        --btn-color-dark: #00CC14;
         --heart-fill: #FF0000;
         --Themes-background: #000;
         --background-color: linear-gradient(180deg, #007F0C 0%, #004306 100%);
@@ -35,6 +37,7 @@
     --border-label: #fff;
     --heart-contour: #000;
     --heart-fill: #FF0000;
+    --btn-color-dark: #000;
     --background-color: linear-gradient(180deg, #E7E7E7 0%, #1A1A1A 100%);
     --page-background-image: url(../images/background-light.png);
 }
@@ -46,6 +49,7 @@
         --Themes-background: #fff;
         --heart-contour: #000;
         --border-label: #fff;
+        --btn-color-dark: #000;
         --heart-fill: #FF0000;
         --background-color: linear-gradient(180deg, #E7E7E7 0%, #1A1A1A 100%);
         --page-background-image: url(../images/background-light.png);
