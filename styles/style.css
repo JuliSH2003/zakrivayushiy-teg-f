@@ -281,7 +281,7 @@
   margin-right: 10px;
 }
 
-.button-text {
+.button__text {
   color: var(--Themes-mainColor, #000);
   font-family: "PressStart2P";
   font-size: 14px;
@@ -319,15 +319,27 @@
 
 .button__icon {
   fill: var(--Themes-mainColor);
-  transition: fill 0.5s ease-in-out; 
+  transition: fill 0.5s ease-in-out;
+  width: 21px;
+  height: 21px;
+  margin-right: 5px;
+}
+
+@media (width <= 375px) {
+  .button__icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 }
 
 .button:hover .button__icon {
-  fill: var(--Themes-background); 
+  fill: var(--Themes-background);
 }
 
 .button:hover * {
-  color: var(--Themes-background); 
+  color: var(--Themes-background);
 }
 
 .button:hover::before {
@@ -336,7 +348,7 @@
 
 .button:focus {
   box-shadow: 2px 2px 0px 0px var(--Themes-mainColor);
-  transition: transform 0.3s ease-in-out; 
+  transition: transform 0.3s ease-in-out;
 }
 
 .sparks {
@@ -373,12 +385,12 @@
 }
 
 .like-icon.is-liked .main-body {
-  fill: var(--heart-fill); 
+  fill: var(--heart-fill);
   animation: fillHeartBody 0.4s ease forwards;
 }
 
 .like-icon.is-liked .core {
-  animation: fillMainBody 0.4s ease forwards 0.1s; 
+  animation: fillMainBody 0.4s ease forwards 0.1s;
 }
 
 .like-icon .is-liked .contour {
@@ -388,7 +400,7 @@
 }
 
 .like-icon.is-liked .contour {
-  animation: fillContour 0.4s ease forwards 0.2s; 
+  animation: fillContour 0.4s ease forwards 0.2s;
 }
 
 .like-icon.is-liked {
@@ -454,23 +466,7 @@
   font-family: "PressStart2P";
   font-size: 14px;
   font-style: normal;
-  line-height: 90%; /* 12.6px */
-}
-
-.button__icon {
-  width: 21px;
-  height: 21px;
-  fill: var(--Themes-mainColor);
-  margin-right: 5px;
-}
-
-@media (width <= 375px) {
-  .button__icon {
-    width: 28px;
-    height: 28px;
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
+  line-height: 90%;
 }
 
 .modal__section {

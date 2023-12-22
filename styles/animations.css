@@ -23,13 +23,21 @@
 }
 
 @keyframes fillHeartBody {
-  from { fill: transparent; }
-  to { fill: var(--heart-fill); }
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: var(--heart-fill);
+  }
 }
 
 @keyframes fillMainBody {
-  from { fill: transparent; }
-  to { fill: var(--heart-fill); }
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: var(--heart-fill);
+  }
 }
 
 @keyframes fillContour {
@@ -38,8 +46,12 @@
 }
 
 @keyframes scaleHeart {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); } 
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  } 
 }
 
 @keyframes sparks {
