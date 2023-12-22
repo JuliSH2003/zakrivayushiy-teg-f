@@ -48,8 +48,8 @@
   justify-content: flex-end;
   flex-direction: column;
   align-items: center;
-  border: 2px solid var(--Themes-mainColor, #000);
-  background: var(--Themes-background, #FFF);
+  border: 2px solid var(--Themes-mainColor);
+  background: var(--Themes-background);
   margin-top: 102px;
 }
 

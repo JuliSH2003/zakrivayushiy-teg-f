@@ -12,8 +12,7 @@
     --heart-contour: #00CC14;
     --heart-fill: #FF0000;
     --btn-color-dark: #00CC14;
-    --background-color: linear-gradient(180deg, #007F0C 0%, #004306 100%);
-    --page-background-image: url(../images/background-black.png);
+    --page-background-image: url(../images/background-black.png), linear-gradient(180deg, #007F0C 0%, #004306 100%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,8 +24,7 @@
         --btn-color-dark: #00CC14;
         --heart-fill: #FF0000;
         --Themes-background: #000;
-        --background-color: linear-gradient(180deg, #007F0C 0%, #004306 100%);
-        --page-background-image: url(../images/background-black.png);
+        --page-background-image: url(../images/background-black.png), linear-gradient(180deg, #007F0C 0%, #004306 100%);
     }
 }
 
@@ -38,8 +36,7 @@
     --heart-contour: #000;
     --heart-fill: #FF0000;
     --btn-color-dark: #000;
-    --background-color: linear-gradient(180deg, #E7E7E7 0%, #1A1A1A 100%);
-    --page-background-image: url(../images/background-light.png);
+    --page-background-image: url(../images/background-light.png), linear-gradient(180deg, #E7E7E7 0%, #1A1A1A 100%);
 }
 
 @media (prefers-color-scheme: light) {
@@ -51,7 +48,6 @@
         --border-label: #fff;
         --btn-color-dark: #000;
         --heart-fill: #FF0000;
-        --background-color: linear-gradient(180deg, #E7E7E7 0%, #1A1A1A 100%);
-        --page-background-image: url(../images/background-light.png);
+        --page-background-image: url(../images/background-light.png), linear-gradient(180deg, #E7E7E7 0%, #1A1A1A 100%);
     }
 }
