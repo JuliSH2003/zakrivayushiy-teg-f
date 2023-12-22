@@ -281,7 +281,7 @@
   margin-right: 10px;
 }
 
-.like {
+.button-text {
   color: var(--Themes-mainColor, #000);
   font-family: "PressStart2P";
   font-size: 14px;
@@ -339,61 +339,60 @@
   transition: transform 0.3s ease-in-out; 
 }
 
-.spark {
+.sparks {
   opacity: 0;
 }
 
-.like-icon .heard-all {
+.like-icon .core {
   fill: var(--Themes-background);
   transition: fill 0.3s;
   transition-timing-function: linear;
 }
 
-.like-icon:hover .heard-all {
+.like-icon:hover .core {
   fill: var(--Themes-mainColor);
 }
 
-.like-icon:active .heard-all {
+.like-icon:active .core {
   fill: var(--heart-fill);
 }
 
-.like-icon .heart-body {
+.like-icon .main-body {
   fill: var(--Themes-background);
   transition: fill 0.3s;
   transition-delay: 0.05s;
   transition-timing-function: linear;
 }
 
-.like-icon:hover .heart-body {
+.like-icon:hover .main-body {
   fill: var(--Themes-mainColor);
 }
 
-.like-icon:active .heart-body {
+.like-icon:active .main-body {
   fill: var(--heart-fill);
 }
 
-.like-icon .is-liked .heard-all {
-  fill: var(--heart-fill);
-  transition: fill 0.3s;
+.like-icon.is-liked .main-body {
+  fill: var(--heart-fill); 
+  animation: fillHeartBody 0.4s ease forwards;
 }
 
-.like-icon .is-liked .heart-body {
-  fill: var(--heart-fill);
-  transition: fill 0.3s;
+.like-icon.is-liked .core {
+  animation: fillMainBody 0.4s ease forwards 0.1s; 
 }
 
-.like-icon .is-liked .heart-contour {
+.like-icon .is-liked .contour {
   fill: var(--heart-fill);
   transition-delay: 0.06s;
   transition: fill 0.3s;
 }
 
-.like-icon .is-liked {
-  animation-name: heart;
-  animation-duration: 0.3s;
-  animation-delay: 0.1s;
-  animation-timing-function: ease-in;
-  animation-direction: alternate;
+.like-icon.is-liked .contour {
+  animation: fillContour 0.4s ease forwards 0.2s; 
+}
+
+.like-icon.is-liked {
+  animation: scaleHeart 0.4s ease-in-out forwards;
 }
 
 .like-icon.is-liked .sparks {
@@ -509,6 +508,12 @@
   padding: 31px;
 }
 
+@media (width <= 375px) {
+  .modal {
+    max-width: 341px;
+  }
+}
+
 .modal::backdrop {
   background-color: #000000;
   opacity: 0.75;
@@ -519,6 +524,13 @@
   background-color: var(--Themes-background);
   padding: 10px 132px;
 }
+
+@media (width <= 375px) {
+  .modal__button {
+    padding: 10px 120px;
+  }
+}
+
 
 .button-modal__text {
   color: var(--Themes-mainColor);
