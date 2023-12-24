@@ -1,9 +1,19 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
     --text-font: "Inter-Flex-Variable";
-    --text-color: #000;
-    --Themes-background: #fff;
-    --background-color: linear-gradient(180deg, #E7E7E7 0%, #1A1A1A 100%);
-    --page-background-image: url(../images/background-light.png);
     --text-size: 18px;
+    --text-color: #00CC14;
+    --themes-background: #000;
+    --themes-mainColor: #00CC14;
+    --border-label: #000;
+    --heart-contour: #00CC14;
+    --heart-fill: #FF0000;
+    --button-text: #000;
+    --btn-color-dark: #00CC14;
+    --page-background-image: repeating-linear-gradient(to right, #000 0px 2px, transparent 2px 4px),
+    repeating-linear-gradient(to bottom, #000 0px 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #007f0c, #004306);
+    --font-weight: 465;
+    --font-weight-second: 785;
+    --font-family: "PressStart2P";
 }

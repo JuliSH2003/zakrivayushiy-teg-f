@@ -24,7 +24,7 @@
   background-size: cover;
   background-attachment: fixed;
   font-size: var(--text-size);
-  font-variation-settings: 'wght' 400;
+  font-variation-settings: 'wght' var(--font-weight);
 }
 
 .container {
@@ -38,40 +38,33 @@
   justify-content: center;
   align-items: flex-end;
   margin-bottom: 100px;
-}
-
-.header__theme-menu {
   max-width: 700px;
   width: 100%;
-  min-height: 368px;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
   align-items: center;
-  border: 2px solid var(--Themes-mainColor);
-  background: var(--Themes-background);
+  border: 2px solid var(--themes-mainColor);
+  background: var(--themes-background);
   margin-top: 102px;
-}
-
-@media (width <= 375px) {
-  .header__theme-menu {
-    min-height: 323px;
-  }
 }
 
 /* заголовок  */
 .header__title {
   font-size: 65px;
+  text-decoration: none;
   font-style: normal;
   line-height: normal;
   text-transform: uppercase;
   margin-bottom: 20px;
-  font-family: "PressStart2P";
+  margin-top: 135px;
+  font-family: var(--font-family, "PressStart2P", sans-serif);
 }
 
 @media (width <= 375px) {
   .header__title {
     font-size: 49px;
+    margin-top: 120px;
   }
 }
 
@@ -82,7 +75,7 @@
   line-height: normal;
   text-transform: uppercase;
   margin-bottom: 15px;
-  font-family: "PressStart2P";
+  font-family: var(--font-family, "PressStart2P", sans-serif);
 }
 
 @media (width <= 375px) {
@@ -94,7 +87,7 @@
 /* кнопки */
 .theme-menu__item {
   margin-bottom: 10px;
-  font-family: "PressStart2P";
+  font-family: var(--font-family, "PressStart2P", sans-serif);
 }
 
 .theme-menu__item:last-child {
@@ -108,7 +101,6 @@
   outline: none;
   font-size: 14px;
   position: relative;
-  overflow: hidden;
   text-transform: uppercase;
   padding-left: 25px;
 }
@@ -118,9 +110,9 @@
   display: block;
   width: 0;
   height: 2px;
+  opacity: 0.6;
   background: currentColor;
   transition: width 0.3s ease-out;
-  position: absolute;
 }
 
 .theme-menu__button:hover {
@@ -143,10 +135,11 @@
 .theme-menu__button:disabled::before {
   content: '▶';
   z-index: 2;
-  color: var(--Themes-mainColor);
-  font-family: "PressStart2P";
+  color: var(--themes-mainColor);
+  font-family: var(--font-family, "PressStart2P", sans-serif);
   position: absolute;
   left: 0px;
+  top: 0px;
   transform: translateY(-50%);
   animation-name: play;
   animation-duration: 0.5s;
@@ -173,19 +166,20 @@
 /* карточки */
 .card {
   max-inline-size: 700px;
-  background-color: var(--Themes-background);
-  border: 2px solid var(--Themes-mainColor);
+  background-color: var(--themes-background);
+  border: 2px solid var(--themes-mainColor);
 }
 
 /* заголовок */
 .card__title {
-  font-variation-settings: 'wght' 700;
-  font-size: var(--text-size);
+  font-variation-settings: 'wght' var(--font-weight-second);
   font-style: normal;
   padding-inline-start: 10px;
-  border-bottom: 2px solid var(--Themes-mainColor);
-  min-height: 31px;
+  padding-top: 3px;
+  padding-bottom: 3px ;
+  border-bottom: 2px solid var(--themes-mainColor);
   display: flex;
+  font-size: 18px;
   align-items: center;
 }
 
@@ -198,7 +192,7 @@
 
 /* изображение */
 .card__image-wrapper {
-  border-bottom: 2px solid var(--Themes-mainColor);
+  border-bottom: 2px solid var(--themes-mainColor);
   z-index: 1;
   position: relative;
 }
@@ -206,13 +200,14 @@
 .card__image-text {
   opacity: 0.5;
   mix-blend-mode: hard-light;
-  font-family: "PressStart2P";
+  font-family: var(--font-family, "PressStart2P", sans-serif);
   font-size: 14px;
   text-transform: uppercase;
   z-index: 1;
   position: absolute;
   top: 25px;
   right: 25px;
+  text-shadow: -1px -1px 0 var(--border-label), 1px -1px 0 var(--border-label), -1px 1px 0 var(--border-label), 1px 1px 0 var(--border-label);
 }
 
 @media (width <= 375px) {
@@ -226,17 +221,11 @@
   text-transform: lowercase;
 }
 
-.card__image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--Themes-background);
-  mix-blend-mode: hard-light;
-}
-
 .card__image {
-  width: 100%;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
   position: relative;
   z-index: 1;
   display: block;
@@ -244,6 +233,7 @@
 
 @supports (-webkit-text-stroke: 1px var(--border-label)) or (text-stroke: 1px var(--border-label)) {
   .card__image-text {
+    /* Если браузер поддерживает text-stroke, используем его и убираем text-shadow */
     text-shadow: none;
     -webkit-text-stroke: 0.5px var(--border-label);
     text-stroke: 0.5px var(--border-label);
@@ -264,8 +254,12 @@
 @media (width <= 375px) {
   .card__text {
     margin: 0 25px;
-    padding-bottom: 27px;
   }
+}
+
+.card__text:last-child {
+  padding-bottom: 0;
+  margin-bottom: 25px;
 }
 
 /* лайк */
@@ -279,28 +273,32 @@
 
 .button__heart {
   margin-right: 10px;
+  border: none;
+  background-color: transparent;
 }
 
 .button__text {
-  color: var(--Themes-mainColor, #000);
-  font-family: "PressStart2P";
+  color: var(--themes-mainColor, #000);
+  font-family: var(--font-family, "PressStart2P", sans-serif);
   font-size: 14px;
+  font-style: normal;
+  line-height: 90%;
   padding: 0 28px;
 }
 
 .button__like {
-  border: 2px solid var(--Themes-mainColor);
-  background-color: var(--Themes-background);
+  border: 2px solid var(--themes-mainColor);
+  background-color: var(--themes-background);
   justify-content: center;
   align-items: center;
 }
 
 .button {
-  background-color: var(--Themes-background);
-  color: var(--Themes-mainColor);
+  background-color: var(--themes-background);
+  color: var( --button-text);
   position: relative;
   overflow: hidden;
-  transition: color 0.5s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
   z-index: 1;
 }
 
@@ -313,13 +311,12 @@
   bottom: 0;
   background-color: var(--btn-color-dark);
   transform: translateX(-100%);
-  transition: transform 0.5s;
+  transition: transform 0.5s ease-in-out;
   z-index: -1;
 }
 
 .button__icon {
-  fill: var(--Themes-mainColor);
-  transition: fill 0.5s ease-in-out;
+  color: var(--themes-mainColor);
   width: 21px;
   height: 21px;
   margin-right: 5px;
@@ -335,11 +332,14 @@
 }
 
 .button:hover .button__icon {
-  fill: var(--Themes-background);
+  mix-blend-mode: normal;
+  fill: var(--themes-background);
 }
 
 .button:hover * {
-  color: var(--Themes-background);
+  color: var(--button-text);
+  mix-blend-mode: normal;
+  z-index: 1;
 }
 
 .button:hover::before {
@@ -347,72 +347,8 @@
 }
 
 .button:focus {
-  box-shadow: 2px 2px 0px 0px var(--Themes-mainColor);
-  transition: transform 0.3s ease-in-out;
-}
-
-.sparks {
-  opacity: 0;
-}
-
-.like-icon .core {
-  fill: var(--Themes-background);
-  transition: fill 0.3s;
-  transition-timing-function: linear;
-}
-
-.like-icon:hover .core {
-  fill: var(--Themes-mainColor);
-}
-
-.like-icon:active .core {
-  fill: var(--heart-fill);
-}
-
-.like-icon .main-body {
-  fill: var(--Themes-background);
-  transition: fill 0.3s;
-  transition-delay: 0.05s;
-  transition-timing-function: linear;
-}
-
-.like-icon:hover .main-body {
-  fill: var(--Themes-mainColor);
-}
-
-.like-icon:active .main-body {
-  fill: var(--heart-fill);
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--heart-fill);
-  animation: fillHeartBody 0.4s ease forwards;
-}
-
-.like-icon.is-liked .core {
-  animation: fillMainBody 0.4s ease forwards 0.1s;
-}
-
-.like-icon .is-liked .contour {
-  fill: var(--heart-fill);
-  transition-delay: 0.06s;
-  transition: fill 0.3s;
-}
-
-.like-icon.is-liked .contour {
-  animation: fillContour 0.4s ease forwards 0.2s;
-}
-
-.like-icon.is-liked {
-  animation: scaleHeart 0.4s ease-in-out forwards;
-}
-
-.like-icon.is-liked .sparks {
-  animation-name: sparks;
-  animation-duration: 0.3s;
-  animation-delay: 0.3s;
-  animation-timing-function: ease-in;
-  animation-direction: alternate;
+  outline: none;
+  box-shadow: 2px 2px 0px 0px var(--themes-mainColor);
 }
 
 /* фильтры  */
@@ -448,8 +384,8 @@
 /* сохранить на память */
 
 .button-save {
-  border: 2px solid var(--Themes-mainColor);
-  background-color: var(--Themes-background);
+  border: 2px solid var(--themes-mainColor);
+  background-color: var(--themes-background);
   padding: 15px 20px;
 }
 
@@ -461,14 +397,6 @@
   }
 }
 
-.button-save__text {
-  color: var(--Themes-mainColor);
-  font-family: "PressStart2P";
-  font-size: 14px;
-  font-style: normal;
-  line-height: 90%;
-}
-
 .modal__section {
   display: flex;
   flex-direction: row;
@@ -477,7 +405,7 @@
 }
 
 .modal__icon {
-  fill: var(--Themes-mainColor);
+  color: var(--themes-mainColor);
   margin-right: 20px;
 }
 
@@ -487,8 +415,8 @@
 }
 
 .modal__text {
-  color: var(--Themes-mainColor);
-  font-family: "PressStart2P";
+  color: var(--themes-mainColor);
+  font-family: var(--font-family, "PressStart2P", sans-serif);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -498,8 +426,8 @@
 }
 
 .modal {
-  background-color: var(--Themes-background);
-  border: 2px solid var(--Themes-mainColor);
+  background-color: var(--themes-background);
+  border: 2px solid var(--themes-mainColor);
   max-width: 357px;
   padding: 31px;
 }
@@ -516,23 +444,13 @@
 }
 
 .modal__button {
-  border: 2px solid var(--Themes-mainColor);
-  background-color: var(--Themes-background);
-  padding: 10px 132px;
+  border: 2px solid var(--themes-mainColor);
+  background-color: var(--themes-background);
+  padding: 10px 100px;
 }
 
 @media (width <= 375px) {
   .modal__button {
-    padding: 10px 120px;
+    padding: 10px 90px;
   }
-}
-
-
-.button-modal__text {
-  color: var(--Themes-mainColor);
-  font-family: "PressStart2P";
-  font-size: 14px;
-  font-style: normal;
-  line-height: 90%;
-  text-transform: uppercase;
 }
