@@ -48,7 +48,7 @@
 
 /* заголовок  */
 .header__title {
-  font-size: 65px;
+  font-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
   text-decoration: none;
   font-style: normal;
   line-height: normal;
@@ -60,25 +60,18 @@
 
 @media (width <= 375px) {
   .header__title {
-    font-size: 49px;
     margin-top: 120px;
   }
 }
 
 /* подзаголовок */
 .header__subtitle {
-  font-size: 23px;
+  font-size: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
   font-style: normal;
   line-height: normal;
   text-transform: uppercase;
   margin-bottom: 15px;
   font-family: var(--font-family, "PressStart2P", sans-serif);
-}
-
-@media (width <= 375px) {
-  .header__subtitle {
-    font-size: 14px;
-  }
 }
 
 /* кнопки */
@@ -100,6 +93,7 @@
   position: relative;
   text-transform: uppercase;
   padding-left: 25px;
+  cursor: pointer;
 }
 
 .theme-menu__button::after {
@@ -150,7 +144,7 @@
 .main-section {
   display: grid;
   justify-items: center;
-  gap: 48px;
+  gap: 52px;
   padding-block-end: 105px;
 }
 
@@ -243,21 +237,22 @@
 }
 
 .card__text {
-  margin: 0 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-left: 27px;
+  padding-right: 27px;
   padding-bottom: 27px;
+  font-size: 18px;
   line-height: 21px;
-}
-
-@media (width <= 375px) {
-  .card__text {
-    margin: 0 25px;
-  }
+  font-variation-settings: 'wght' var(--font-weight);
 }
 
 .card__text:last-child {
   padding-bottom: 0;
   margin-bottom: 25px;
 }
+
 
 /* лайк */
 .buttons {
@@ -266,21 +261,35 @@
   justify-content: flex-end;
   margin-bottom: 25px;
   margin-right: 25px;
+  cursor: pointer;
 }
 
 .button__heart {
   margin-right: 10px;
   border: none;
   background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.card__icon-button:focus {
+  outline: none; 
+  border: 2px solid var(--themes-mainColor); 
+  transition: 0.3s ease;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--themes-mainColor); 
+  transition: 0.3s ease;
 }
 
 .button__text {
-  color: var(--themes-mainColor, #000);
+  color: var(--themes-mainColor);
   font-family: var(--font-family, "PressStart2P", sans-serif);
   font-size: 14px;
   font-style: normal;
   line-height: 90%;
-  padding: 0 28px;
+  padding: 0 15px;
 }
 
 .button__like {
@@ -288,14 +297,15 @@
   background-color: var(--themes-background);
   justify-content: center;
   align-items: center;
+  padding: 0 20px;
 }
 
 .button {
   background-color: var(--themes-background);
-  color: var( --button-text);
   position: relative;
   overflow: hidden;
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  cursor: pointer;
   z-index: 1;
 }
 
@@ -313,7 +323,7 @@
 }
 
 .button__icon {
-  color: var(--themes-mainColor);
+  fill: var(--themes-mainColor);
   width: 21px;
   height: 21px;
   margin-right: 5px;
@@ -329,13 +339,13 @@
 }
 
 .button:hover .button__icon {
-  mix-blend-mode: normal;
+  mix-blend-mode: difference;
   fill: var(--themes-background);
 }
 
 .button:hover * {
   color: var(--button-text);
-  mix-blend-mode: normal;
+  mix-blend-mode: difference;
   z-index: 1;
 }
 
@@ -383,7 +393,8 @@
 .button-save {
   border: 2px solid var(--themes-mainColor);
   background-color: var(--themes-background);
-  padding: 15px 20px;
+  padding: 15px 8px;
+  cursor: pointer;
 }
 
 @media (width <= 375px) {
@@ -402,13 +413,13 @@
 }
 
 .modal__icon {
-  color: var(--themes-mainColor);
   margin-right: 20px;
 }
 
 .modal__section svg {
   width: 60px;
   height: 60px;
+  fill: var(--themes-mainColor);
 }
 
 .modal__text {
@@ -443,11 +454,14 @@
 .modal__button {
   border: 2px solid var(--themes-mainColor);
   background-color: var(--themes-background);
-  padding: 10px 100px;
+  padding: 12px 115px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
 }
 
 @media (width <= 375px) {
   .modal__button {
-    padding: 10px 90px;
+    padding: 10px 105px;
   }
 }
