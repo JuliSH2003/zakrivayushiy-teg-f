@@ -58,7 +58,7 @@
   font-family: var(--font-family, "PressStart2P", sans-serif);
 }
 
-@media (max-width: 376px) {
+@media (max-width: 375px) {
   .header__title {
     margin-top: 120px;
   }
@@ -148,7 +148,7 @@
   padding-block-end: 105px;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 375px) {
   .main-section {
     gap: 48px;
   }
@@ -174,7 +174,7 @@
   align-items: center;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 375px) {
   .card__title {
     padding-inline-start: 0px;
     padding: 3px 10px;
@@ -201,7 +201,7 @@
   text-shadow: -1px -1px 0 var(--border-label), 1px -1px 0 var(--border-label), -1px 1px 0 var(--border-label), 1px 1px 0 var(--border-label);
 }
 
-@media (max-width: 376px) {
+@media (max-width: 375px) {
   .card__image-text {
     top: 25px;
     right: 10px;
@@ -330,7 +330,7 @@
   margin-left: 15px;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 375px) {
   .button__icon {
     width: 28px;
     height: 28px;
@@ -398,7 +398,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 375px) {
   .button-save {
     display: flex;
     flex-direction: column;
@@ -437,12 +437,19 @@
 .modal {
   background-color: var(--themes-background);
   border: 2px solid var(--themes-mainColor);
-  padding: 32px 25px;
+  padding: 2rem 1.6rem;
+  margin: auto clamp(0, 2%, auto);
+}
+
+dialog {
+  max-width: 90%;
+  box-sizing: border-box;
 }
 
 .modal::backdrop {
   background-color: #000000;
   opacity: 0.75;
+  width: max(100%, 320px);
 }
 
 .modal__button {
@@ -453,10 +460,4 @@
   cursor: pointer;
   display: flex;
   justify-content: center;
-}
-
-@media (max-width: 376px) {
-  .modal__button {
-    padding: 10px 105px;
-  }
 }
