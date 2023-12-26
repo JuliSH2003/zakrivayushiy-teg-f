@@ -58,7 +58,7 @@
   font-family: var(--font-family, "PressStart2P", sans-serif);
 }
 
-@media (width <= 375px) {
+@media (max-width: 376px) {
   .header__title {
     margin-top: 120px;
   }
@@ -148,7 +148,7 @@
   padding-block-end: 105px;
 }
 
-@media (width <= 375px) {
+@media (max-width: 376px) {
   .main-section {
     gap: 48px;
   }
@@ -174,7 +174,7 @@
   align-items: center;
 }
 
-@media (width <= 375px) {
+@media (max-width: 376px) {
   .card__title {
     padding-inline-start: 0px;
     padding: 3px 10px;
@@ -201,7 +201,7 @@
   text-shadow: -1px -1px 0 var(--border-label), 1px -1px 0 var(--border-label), -1px 1px 0 var(--border-label), 1px 1px 0 var(--border-label);
 }
 
-@media (width <= 375px) {
+@media (max-width: 376px) {
   .card__image-text {
     top: 25px;
     right: 10px;
@@ -323,30 +323,31 @@
 }
 
 .button__icon {
-  fill: var(--themes-mainColor);
+  color: var(--themes-mainColor);
   width: 21px;
   height: 21px;
   margin-right: 5px;
+  margin-left: 15px;
 }
 
-@media (width <= 375px) {
+@media (max-width: 376px) {
   .button__icon {
     width: 28px;
     height: 28px;
     margin-right: 0;
+    margin-left: 0;
     margin-bottom: 10px;
   }
 }
 
 .button:hover .button__icon {
-  mix-blend-mode: difference;
+  mix-blend-mode: normal;
   fill: var(--themes-background);
 }
 
 .button:hover * {
   color: var(--button-text);
-  mix-blend-mode: difference;
-  z-index: 1;
+  mix-blend-mode: normal;
 }
 
 .button:hover::before {
@@ -397,7 +398,7 @@
   cursor: pointer;
 }
 
-@media (width <= 375px) {
+@media (max-width: 376px) {
   .button-save {
     display: flex;
     flex-direction: column;
@@ -413,13 +414,13 @@
 }
 
 .modal__icon {
-  margin-right: 20px;
+  margin-right: 13px;
 }
 
 .modal__section svg {
-  width: 60px;
-  height: 60px;
-  fill: var(--themes-mainColor);
+  width: 40px;
+  height: 55px;
+  color: var(--themes-mainColor);
 }
 
 .modal__text {
@@ -436,14 +437,7 @@
 .modal {
   background-color: var(--themes-background);
   border: 2px solid var(--themes-mainColor);
-  max-width: 357px;
-  padding: 31px;
-}
-
-@media (width <= 375px) {
-  .modal {
-    max-width: 341px;
-  }
+  padding: 32px 25px;
 }
 
 .modal::backdrop {
@@ -454,13 +448,14 @@
 .modal__button {
   border: 2px solid var(--themes-mainColor);
   background-color: var(--themes-background);
-  padding: 12px 115px;
+  inline-size: 100%;
+  padding: 9px 10px;
   cursor: pointer;
   display: flex;
   justify-content: center;
 }
 
-@media (width <= 375px) {
+@media (max-width: 376px) {
   .modal__button {
     padding: 10px 105px;
   }
