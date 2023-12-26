@@ -382,7 +382,7 @@
 }
 
 .filter-blur {
-  filter: blur(10px);
+  filter: blur(5px);
 }
 
 .filter-rotate {
@@ -431,25 +431,27 @@
   font-weight: 400;
   line-height: 150%; /* 21px */
   text-transform: uppercase;
-  max-width: 234px;
+  max-width: 200px;
 }
 
 .modal {
   background-color: var(--themes-background);
   border: 2px solid var(--themes-mainColor);
   padding: 2rem 1.6rem;
-  margin: auto clamp(0, 2%, auto);
 }
 
-dialog {
-  max-width: 90%;
-  box-sizing: border-box;
+dialog::backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden; /* предотвращение прокрутки */
 }
 
 .modal::backdrop {
   background-color: #000000;
   opacity: 0.75;
-  width: max(100%, 320px);
 }
 
 .modal__button {
