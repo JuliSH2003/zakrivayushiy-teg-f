@@ -273,13 +273,13 @@
 }
 
 .card__icon-button:focus {
-  outline: none; 
-  border: 2px solid var(--themes-mainColor); 
+  outline: none;
+  border: 2px solid var(--themes-mainColor);
   transition: 0.3s ease;
 }
 
 .card__icon-button:focus-visible {
-  border: 2px solid var(--themes-mainColor); 
+  border: 2px solid var(--themes-mainColor);
   transition: 0.3s ease;
 }
 
