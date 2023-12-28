@@ -1,8 +1,8 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-    --text-font: "Inter-Flex-Variable";
-    --text-size: 18px;
-    --text-color: #00CC14;
+    --font-primary: "Inter-Flex-Variable";
+    --font-size-default: 18px;
+    --color-text-default: #00CC14;
     --themes-background: #000;
     --themes-mainColor: #00CC14;
     --border-label: #000;
@@ -13,7 +13,7 @@
     --page-background-image: repeating-linear-gradient(to right, #000 0px 2px, transparent 2px 4px),
     repeating-linear-gradient(to bottom, #000 0px 2px, transparent 2px 4px),
     linear-gradient(to bottom, #007f0c, #004306);
-    --font-weight: 465;
-    --font-weight-second: 785;
+    --font-weight-normal: 465;
+    --font-weight-bold: 785;
     --font-family: "PressStart2P";
 }

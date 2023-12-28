@@ -17,14 +17,15 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  color: var(--text-color);
+  color: var(--color-text-default);
   font-family: var(--text-font, "Inter-Flex-Variable", sans-serif);
+  background-color: #000000; /* Черный цвет фона в качестве резерва */
   background-image: var(--page-background-image);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  font-size: var(--text-size);
-  font-variation-settings: 'wght' var(--font-weight);
+  font-size: var(--font-size-default);
+  font-variation-settings: 'wght' var(--font-weight-normal);
 }
 
 .container {
@@ -70,7 +71,7 @@
   font-style: normal;
   line-height: normal;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   font-family: var(--font-family, "PressStart2P", sans-serif);
 }
 
@@ -88,34 +89,39 @@
   background-color: transparent;
   border: none;
   margin: 0;
-  outline: none;
-  font-size: 14px;
-  position: relative;
-  text-transform: uppercase;
   padding-left: 25px;
-  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+  outline: none;
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button::after {
   content: '';
   display: block;
-  width: 0;
-  height: 2px;
-  opacity: 0.6;
-  background: currentColor;
-  transition: width 0.3s ease-out;
-}
-
-.theme-menu__button:hover {
-  opacity: 0.6;
-}
-
-.theme-menu__button:hover::after {
+  position: absolute;
+  left: 0;
+  bottom: -2px;
   width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
 .theme-menu__button:focus {
   outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus::after {
+  transform: scaleX(1);
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
 }
 
 .theme-menu__button:disabled {
@@ -130,7 +136,7 @@
   font-family: var(--font-family, "PressStart2P", sans-serif);
   position: absolute;
   left: 0px;
-  top: 0px;
+  top: 50%;
   transform: translateY(-50%);
   animation-name: play;
   animation-duration: 0.5s;
@@ -140,11 +146,15 @@
   outline: none;
 }
 
+.theme-menu__button:hover {
+  opacity: 0.6;
+}
+
 /* главная секция */
 .main-section {
   display: grid;
   justify-items: center;
-  gap: 52px;
+  gap: 46px;
   padding-block-end: 105px;
 }
 
@@ -163,11 +173,11 @@
 
 /* заголовок */
 .card__title {
-  font-variation-settings: 'wght' var(--font-weight-second);
+  font-variation-settings: 'wght' var(--font-weight-bold);
   font-style: normal;
   padding-inline-start: 10px;
   padding-top: 3px;
-  padding-bottom: 3px ;
+  padding-bottom: 4px ;
   border-bottom: 2px solid var(--themes-mainColor);
   display: flex;
   font-size: 18px;
@@ -241,11 +251,18 @@
   flex-direction: column;
   gap: 25px;
   padding-left: 27px;
-  padding-right: 27px;
+  padding-right: 23px;
   padding-bottom: 27px;
   font-size: 18px;
   line-height: 21px;
-  font-variation-settings: 'wght' var(--font-weight);
+  font-variation-settings: 'wght' var(--font-weight-normal);
+}
+
+@media (max-width: 375px) {
+  .card__text {
+    padding-right: 22px;
+    gap: 20px;
+  }
 }
 
 .card__text:last-child {
@@ -259,32 +276,29 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin-bottom: 25px;
+  margin-bottom: 26px;
   margin-right: 25px;
-  cursor: pointer;
 }
 
 .button__heart {
-  margin-right: 10px;
-  border: none;
+  border: 2px solid transparent;
   background-color: transparent;
   display: flex;
   align-items: center;
+  transition: 0.3s ease;
 }
 
 .card__icon-button:focus {
   outline: none;
   border: 2px solid var(--themes-mainColor);
-  transition: 0.3s ease;
 }
 
 .card__icon-button:focus-visible {
   border: 2px solid var(--themes-mainColor);
-  transition: 0.3s ease;
 }
 
 .button__text {
-  color: var(--themes-mainColor);
+  color: var(--button-text);
   font-family: var(--font-family, "PressStart2P", sans-serif);
   font-size: 14px;
   font-style: normal;
@@ -295,17 +309,19 @@
 .button__like {
   border: 2px solid var(--themes-mainColor);
   background-color: var(--themes-background);
+  display: flex;
+  width: 130px;
+  padding: 9px 15px;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
+  gap: 10px;
 }
 
 .button {
   background-color: var(--themes-background);
   position: relative;
   overflow: hidden;
-  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-  cursor: pointer;
+  transition: box-shadow 0.3s ease;
   z-index: 1;
 }
 
@@ -313,21 +329,24 @@
   content: '';
   position: absolute;
   top: 0;
-  left: -50px;
-  right: 0;
-  bottom: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%;
   background-color: var(--btn-color-dark);
   transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
-  z-index: -1;
+  z-index: 0;
 }
 
 .button__icon {
-  color: var(--themes-mainColor);
+  color: var(--button-text);
   width: 21px;
   height: 21px;
   margin-right: 5px;
   margin-left: 15px;
+  mix-blend-mode: difference;
+  position: relative; 
+  z-index: 1;
 }
 
 @media (max-width: 375px) {
@@ -340,14 +359,10 @@
   }
 }
 
-.button:hover .button__icon {
-  mix-blend-mode: normal;
-  fill: var(--themes-background);
-}
-
-.button:hover * {
-  color: var(--button-text);
-  mix-blend-mode: normal;
+.button span {
+  position: relative;
+  mix-blend-mode: difference;
+  z-index: 1;
 }
 
 .button:hover::before {
@@ -394,8 +409,7 @@
 .button-save {
   border: 2px solid var(--themes-mainColor);
   background-color: var(--themes-background);
-  padding: 15px 8px;
-  cursor: pointer;
+  padding: 13px 0;
 }
 
 @media (max-width: 375px) {
@@ -409,12 +423,15 @@
 .modal__section {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  margin: 0;
   margin-bottom: 30px;
 }
 
-.modal__icon {
-  margin-right: 13px;
+.modal__floppy {
+  margin-right: 20px;
 }
 
 .modal__section svg {
@@ -432,12 +449,22 @@
   line-height: 150%; /* 21px */
   text-transform: uppercase;
   max-width: 200px;
+  display: flex;
+  justify-content: center;
 }
 
 .modal {
   background-color: var(--themes-background);
   border: 2px solid var(--themes-mainColor);
-  padding: 2rem 1.6rem;
+  padding: 30px;
+  width: 357px;
+}
+
+@media (max-width: 375px) {
+  .modal {
+    width: 341px;
+    padding: 35px;
+  }
 }
 
 dialog::backdrop {
@@ -459,7 +486,6 @@ dialog::backdrop {
   background-color: var(--themes-background);
   inline-size: 100%;
   padding: 9px 10px;
-  cursor: pointer;
   display: flex;
   justify-content: center;
 }

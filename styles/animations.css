@@ -14,12 +14,12 @@
 */
 
 @keyframes play {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(10px);
-    }
+  from {
+    left: 0;
+  }
+  to {
+    left: 4px;
+  }
 }
 
 .sparks {
@@ -35,6 +35,11 @@
 .like-icon:hover .core,
 .like-icon:hover .main-body {
   fill: var(--themes-mainColor);
+  transition-delay: 0s;
+}
+
+.like-icon:hover .main-body {
+  transition-delay: 0.05s;
 }
 
 .like-icon:active .core,
