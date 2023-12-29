@@ -24,37 +24,54 @@
 
 .sparks {
   opacity: 0;
-  transition: opacity 0.3s ease-in 0.3s;
 }
 
-.like-icon .core,
+.like-icon .core {
+  fill: var(--themes-background);
+  transition: fill 0.3s linear;
+  transition-delay: 0.03s;
+}
+
+.like-icon:hover .core {
+  fill: var(--themes-mainColor);
+  transition: fill 0.3s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--heart-fill);
+  transition: fill 0.3s;
+}
+
 .like-icon .main-body {
+  fill: var(--themes-background);
   transition: fill 0.3s linear;
 }
 
-.like-icon:hover .core,
 .like-icon:hover .main-body {
   fill: var(--themes-mainColor);
-  transition-delay: 0s;
-}
-
-.like-icon:hover .main-body {
+  transition: fill 0.3s;
   transition-delay: 0.05s;
 }
 
 .like-icon:active .core,
 .like-icon:active .main-body {
   fill: var(--heart-fill);
+  transition: fill 0.3s ease;
 }
 
-.like-icon.is-liked .core,
+.card__icon-button:active .core {
+  transition-delay: 0.03s;
+}
+
 .like-icon.is-liked .main-body {
+  transition: fill 0.3s;
   fill: var(--heart-fill);
 }
 
 .like-icon.is-liked .contour {
+  transition: fill 0.3s;
   fill: var(--heart-fill);
-  transition: fill 0.3s linear 0.06s;
+  transition-delay: 0.06s;
 }
 
 .like-icon:not(.is-liked) .contour {
@@ -62,8 +79,11 @@
 }
 
 .like-icon.is-liked {
-  transition: scaleHeart 0.6s ease-in;
-  animation-fill-mode: none;
+  animation-name: fillHeartBody;
+  animation-duration: 0.3s;
+  animation-delay: 0.1s;
+  animation-timing-function: ease-in;
+  animation-direction: alternate;
 }
 
 .like-icon.is-liked .sparks {
@@ -75,40 +95,19 @@
 }
 
 @keyframes fillHeartBody {
-  from {
-    fill: transparent;
+  0% {
+    transform: scale(1);
   }
-  to {
-    fill: var(--heart-fill);
-  }
-}
-
-@keyframes fillMainBody {
-  from {
-    fill: transparent;
-  }
-  to {
-    fill: var(--heart-fill);
-  }
-}
-
-@keyframes fillContour {
-  from {
-    fill: transparent;
-  }
-  to {
-    fill: var(--heart-fill);
+  100% {
+    transform: scale(1.5);
   }
 }
 
 @keyframes sparks {
-  0%, 50% { /* 0.3s задержка: 0.3s / 0.6s = 50% */
-    opacity: 0;
-  }
-  75% {
-    opacity: 1;
+  0% {
+    opacity: 0;;
   }
   100% {
-    opacity: 0;
+    opacity: 1;
   }
 }

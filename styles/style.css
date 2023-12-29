@@ -18,8 +18,8 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   color: var(--color-text-default);
-  font-family: var(--text-font, "Inter-Flex-Variable", sans-serif);
-  background-color: #000000; /* Черный цвет фона в качестве резерва */
+  font-family: var(--font-primary, "Inter-Flex-Variable", sans-serif);
+  background-color: var(--themes-background); 
   background-image: var(--page-background-image);
   background-position: center;
   background-size: cover;
@@ -44,7 +44,7 @@
   align-items: center;
   border: 2px solid var(--themes-mainColor);
   background: var(--themes-background);
-  margin-top: 102px;
+  margin-top: 100px;
 }
 
 /* заголовок  */
@@ -101,14 +101,15 @@
   content: '';
   display: block;
   position: absolute;
-  left: 0;
+  left: 0px;
+  margin-left: 25px;
   bottom: -2px;
-  width: 100%;
+  width: 80%;
   height: 2px;
   background-color: currentColor;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  transition: transform 0.3s ease;
 }
 
 .theme-menu__button:focus {
@@ -150,13 +151,13 @@
 .main-section {
   display: grid;
   justify-items: center;
-  gap: 46px;
+  gap: 48px;
   padding-block-end: 105px;
 }
 
 @media (max-width: 375px) {
   .main-section {
-    gap: 48px;
+    gap: 50px;
   }
 }
 
@@ -172,7 +173,7 @@
   font-variation-settings: 'wght' var(--font-weight-bold);
   font-style: normal;
   padding-inline-start: 10px;
-  padding-top: 3px;
+  padding-top: 4px;
   padding-bottom: 4px ;
   border-bottom: 2px solid var(--themes-mainColor);
   display: flex;
@@ -245,8 +246,8 @@
 .card__text {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  padding-left: 27px;
+  gap: 22px;
+  padding-left: 24px;
   padding-right: 23px;
   padding-bottom: 27px;
   font-size: 18px;
@@ -256,8 +257,8 @@
 
 @media (max-width: 375px) {
   .card__text {
-    padding-right: 22px;
-    gap: 20px;
+    padding-right: 25px;
+    gap: 19px;
   }
 }
 
@@ -266,6 +267,15 @@
   margin-bottom: 25px;
 }
 
+.card__text-inform {
+  padding-right: 25px;
+}
+
+@media (max-width: 375px) {
+  .card__text-information {
+    padding-right: 28px;
+  }
+}
 
 /* лайк */
 .buttons {
@@ -282,6 +292,8 @@
   display: flex;
   align-items: center;
   transition: 0.3s ease;
+  margin-right: 2px;
+  padding: 0;
 }
 
 .card__icon-button:focus {
@@ -338,8 +350,7 @@
   color: var(--button-text);
   width: 21px;
   height: 21px;
-  margin-right: 5px;
-  margin-left: 15px;
+  margin-left: 14px;
   mix-blend-mode: difference;
   position: relative;
   z-index: 1;
@@ -406,6 +417,8 @@
   border: 2px solid var(--themes-mainColor);
   background-color: var(--themes-background);
   padding: 13px 0;
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 375px) {
@@ -484,4 +497,8 @@ dialog::backdrop {
   padding: 9px 10px;
   display: flex;
   justify-content: center;
+}
+
+.modal__text-button {
+  text-transform: uppercase;
 }
