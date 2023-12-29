@@ -19,7 +19,7 @@
   min-block-size: 100dvb;
   color: var(--color-text-default);
   font-family: var(--font-primary, "Inter-Flex-Variable", sans-serif);
-  background-color: var(--themes-background); 
+  background-color: var(--themes-background);
   background-image: var(--page-background-image);
   background-position: center;
   background-size: cover;
